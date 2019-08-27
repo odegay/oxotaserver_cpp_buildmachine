@@ -37,18 +37,3 @@ RUN make install
 RUN apt-get update
 RUN ldconfig
 RUN iconv --version
-# Set the working directory to /app
-WORKDIR /app
-RUN dir
-#CLONE LATEST ShoebillPLUGIN version
-RUN git clone https://github.com/odegay/ShoebillPlugin.git
-# Set the working directory to /ShoebillPLugin
-WORKDIR /app/ShoebillPlugin
-# just in case we have to update the rep
-CMD  ["git pull"]
-#running build
-CMD  ["./build.sh"]
-#RUN ./build.sh
-
-
-
